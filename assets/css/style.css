@@ -7,4 +7,87 @@ html {
 /* khôi phục lại cỡ chữ mặc định theo rem */
 body {
   font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+}
+/* =================== common =================== */
+a {
+  text-decoration: none;
+}
+.main-content {
+  width: 1170px;
+  max-width: calc(100% - 48px);
+  margin-left: auto;
+  margin-right: auto;
+}
+/* =================== header =================== */
+.header {
+  background-color: chartreuse;
+}
+.header.fixed {
+  position: sticky;
+  top: -28px;
+}
+.header .body {
+  display: flex;
+  /* justify-content: start; tuân theo main axis */
+  align-items: center;
+  padding: 36px 0px 8px;
+  overflow: auto; /*thanh cuộn + text ko vượt quá khối box*/
+}
+.nav {
+  margin-left: auto;
+}
+.nav ul {
+  /* thoát ra khỏi luồng thông thường*/
+  display: flex;
+  /* display: inline-flex; như nhau */
+}
+.nav a {
+  position: relative;
+  color: #5f5b53;
+  font-size: 1.6rem;
+  padding: 8px 21px;
+}
+.nav li.active a,
+.nav a:hover {
+  color: #171100;
+  /*tô đậm chữ*/
+  /* font-weight: 600; */
+  text-shadow: 1px 0 0 currentColor;
+}
+.nav li.active a::after {
+  /*lớp giả after, before là inline, khi set height, width ko có tác dụng, phải đổi sang display: block*/
+  content: "";
+  position: absolute;
+  display: block;
+  /* display: inline-block; */
+  /* ấy dấu gạch chân */
+  left: 21px;
+  bottom: 6px;
+  width: 12px;
+  height: 2px;
+  border-radius: 1px;
+  background: #171100;
+}
+.btn {
+  /* class .btn trong thẻ a, mà mặc định thẻ a là display inline, phải chuyển sang display: block để có thể thêm padding vào */
+  /* display block, display inline... (1 số thuộc tính ko áp dụng được như padding, margin top, bottom - nghĩa là nó ko thể phá vỡ cấu trúc dòng) */
+  display: block;
+  padding: 0px 16px;
+  line-height: 50px;
+  min-width: 118px;
+  color: #fff;
+  font-weight: 600px;
+  font-size: 1.6rem;
+  text-align: center;
+  background-color: #171100;
+  border-radius: 24.5px;
+}
+.header .signup {
+  /* lưu ý dấu cách giữa 2 class */
+  min-width: 144px;
+}
+.header .action {
+  /* lưu ý dấu cách giữa 2 class */
+  margin-left: 49px;
 }
