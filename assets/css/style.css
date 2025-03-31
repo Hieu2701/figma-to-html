@@ -35,6 +35,22 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+
+.line-clamp.line-2 {
+  --line-clamp: 2;
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-clamp, 1);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.break-all {
+  word-break: break-all;
+}
+
 /* =================== header =================== */
 .header {
   background-color: #fffcf4;
@@ -50,6 +66,7 @@ a {
   align-items: center;
   padding: 36px 0px 8px;
   overflow: auto; /*thanh cuộn + text ko vượt quá khối box*/
+  /* overflow: hidden  ẩn nội dung thừa */
 }
 .nav {
   margin-left: auto;
@@ -341,9 +358,15 @@ a {
 }
 
 .popular .course-item {
+  flex: 1;
+  /* chia đều không gian các phẩn tử */
+  /* flex grow: 0-1,2,3... phần tử có thể mở rộng khi có khoảng trống */
+  /* flex shrink: 0-1,2,3... khả năng co lại của item */
+  /* flex basis: px, %, auto,... kích thước ban đầu của item theo main axis */
   border-radius: 12px;
   background-color: #fff;
   border: 1px solid #e2dfda; /*đường viền*/
+  /* white-space:nowrap; ko xuống dòng, kể cả chạm lề */
 }
 
 .popular .course-item:hover {
