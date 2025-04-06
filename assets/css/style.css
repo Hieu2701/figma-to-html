@@ -512,7 +512,7 @@ a {
   font-style: italic;
 }
 
-/* =================== features =================== */
+/* =================== features 1 =================== */
 
 .features {
   margin-top: 135px;
@@ -559,4 +559,24 @@ a {
   width: 137px;
   height: 50px;
   background-color: var(--primary-color);
+}
+
+/* =================== features 2 =================== */
+
+.features-2nd {
+  margin-top: 70px; /*vì features 1 và features 2, mỗi cái đều có padding 65 >> 200 - 65x2 = 70*/
+}
+
+.features-2nd .body {
+  flex-direction: row-reverse;
+}
+
+.features-2nd .content {
+  width: 49%;
+}
+
+.features-2nd .images img {
+  width: 470px;
+  height: 440px;
+  border-radius: 20px;
 }
