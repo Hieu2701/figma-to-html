@@ -580,3 +580,125 @@ a {
   height: 440px;
   border-radius: 20px;
 }
+
+/* =================== features 3 =================== */
+.blogs {
+  margin-top: 135px;
+  padding: 96px 0;
+  background: #fffcf4;
+}
+
+.blogs .blog-top {
+  text-align: center;
+  /* căn giữa khung chứa nó */
+}
+
+.blogs .blog-top .desc {
+  width: 448px; /*gõ dòng này xong nó sẽ bị căn trái, vì text-align:center đã căn giữa cái text trong khung rồi, giờ phải căn khung đó ra giữa lần nữa*/
+  /* để ko bị nữa thì xài.... */
+  margin: 16px auto 0; /*là một cách canh giữa phần tử theo chiều ngang, đặc biệt là với các phần tử có chiều rộng cố định.*/
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+  color: #696262;
+}
+
+.blogs .blog-list {
+  display: flex;
+  margin-top: 55px;
+  gap: 30px;
+  overflow: hidden;
+}
+
+.blogs .item {
+  width: calc(33.33% - 20px);
+  background: #fff;
+  flex-shrink: 0;
+}
+
+.blogs .item:hover {
+  box-shadow: 0 16px 32px 0 #0000000d;
+}
+
+.blogs .item .thumb {
+  width: 100%; /*rộng bằng đúng chiều rộng thẻ cha, là 32%*/
+  height: 250px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+}
+
+.blogs .item .info {
+  padding: 20px 20px 28px;
+}
+
+.blogs .item .date {
+  position: relative;
+  padding-bottom: 12px;
+  color: #5f5b53;
+  font-size: 1.4rem;
+  line-height: 2.6rem;
+  /* vì thẻ before như thẻ con của thẻ date nên...  */
+  display: inline-flex;
+  align-items: center;
+}
+
+.blogs .item .date::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  margin-right: 4px;
+}
+
+.blogs .item .date::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: "";
+  display: inline-block;
+  right: -27px;
+  height: 1px;
+  border-radius: 0.5px;
+  background: #e2dfda;
+}
+
+.blogs .item .title {
+  margin-top: 12px;
+  font-weight: 600;
+  color: #171100;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
+}
+
+.blogs .item .btn {
+  display: inline-flex;
+  justify-content: center;
+  margin-top: 12px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.blogs .item .btn:hover {
+  background: var(--primary-color);
+}
+
+.blogs .dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 38px;
+}
+
+.blogs .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5f5b53;
+  cursor: pointer;
+}
+
+.blogs .dot.active {
+  background-color: var(--primary-color);
+  cursor: default;
+}
